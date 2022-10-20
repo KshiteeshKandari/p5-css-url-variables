@@ -2,6 +2,11 @@
 let clr = 'red';
 let clr_input;
 let num_input; 
+let img1;
+
+function preload(){
+  img1 = loadImage("images/1.jpg");
+}
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(0);
@@ -18,6 +23,9 @@ function setup() {
   //add submit button
   button = createButton('submit');
   button.position(clr_input.x + clr_input.width, clr_input.y);
+  
+
+
 }
 
 function draw() {
@@ -32,6 +40,7 @@ function draw() {
     href = setParams(href, 'num', num); //set URL navigation to include clr value
     window.location.href = href; //navigate to URL set above
   });
+  image(img1,mouseX-width/6,0,width,height);
 
 }
 
